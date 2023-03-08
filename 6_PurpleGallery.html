@@ -8,6 +8,9 @@
             background-color: Gray;
             color: Black;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         button {
             transform: rotate(-25deg) skew(25deg);
@@ -95,11 +98,58 @@
         button:nth-child(1):hover span {
             background: #52E19F;
         }
+        @import url('href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        ul li{
+            position: relative;
+            list-style: none;
+        }
+        ul li a{
+            position: relative;
+            font-size: 4em;
+            text-decoration: none;
+            line-height: 1em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+        }
+        ul li a::before{
+            content: attr(data-text);
+            position: absolute;
+            color: var(--clr);
+            width: 0;
+            overflow: hidden;
+            transition: 1s;
+            border-right: 8px solid var(--clr);
+            -webkit-text-stroke: 1px var(--clr);
+        }
+        ul li a:hover::before{
+            width: 100%;
+            filter: drop-shadow(0 0 25px var(--clr));
+        }
     </style>
 </head>
   <body>
     <img src="6_Purple.jpg" style="width: 100%">
-    <p style="font-size: 300%"><b>Welcome to the Purple Gallery!</b></p>
+    <p><br><br></p>
+    <p style="font-size: 300%"><b>Welcome to the <br></b></p>
+    <ul>
+    <li style="--clr: Purple">
+      <a href="#" data-text="&nbsp;Purple">&nbsp;Purple&nbsp;</a>
+    </li>
+    </ul>
+    <p style="font-size: 300%"><b>Gallery! <br><br></b></p>
     <p style="font-size: 200%">Press the button below to go to a random page.</p>
     <p><br><br><br><br></p>
     <button onclick="chooseRandomPage()">
