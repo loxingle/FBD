@@ -95,11 +95,40 @@
         button:nth-child(1):hover span {
             background: #52E19F;
         }
+        @font-face {
+            src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+            format("woff2");
+            font-style: normal;
+            font-weight: normal;
+}
+.benio p {
+  transition: all 0.5s;
+  -webkit-text-stroke: 4px #d6f4f4;
+  font-variation-settings: "wght" 900, "ital" 1;
+  font-size: 5rem;
+  text-align: center;
+  color: transparent;
+  font-family: "Meta", sans-serif;
+  text-shadow: 10px 10px 0px #07bccc,
+    15px 15px 0px #e601c0,
+    20px 20px 0px #e9019a,
+    25px 25px 0px #f40468,
+    45px 45px 10px #482896;
+  cursor: pointer;
+}
+.benio p:hover {
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+}
     </style>
 </head>
   <body>
     <img src="5_Benio.jpg" style="width: 100%">
-    <p style="font-size: 300%"><b>Welcome to the Benio Gallery!</b></p>
+    <p style="font-size: 300%"><b>Welcome to the</b></p>
+    <div class="benio">
+        <p>Benio</p>
+    </div>
+    <p style="font-size: 300%"><b>Gallery!</b></p>
     <p style="font-size: 200%">Press the button below to go to a random page.</p>
     <p><br><br><br><br></p>
     <button onclick="chooseRandomPage()">
