@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>F's 15th Birthday Surprise!</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-color: Gray;
             color: Black;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         button {
             transform: rotate(-25deg) skew(25deg);
@@ -95,11 +103,62 @@
         button:nth-child(1):hover span {
             background: #52E19F;
         }
+        .water-center {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content{
+            position: relative;
+        }
+        .content h4{
+            position: absolute;
+            color: #fff;
+            transform: translate(-50%,-50%);
+            font-size: 8em;
+        }
+        .content h4:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 1px #03a9f4;
+        }
+        .content h4:nth-child(2){
+            color: #03a9f4;
+            animation: animate 4s ease-in-out infinite;
+        }
+        @keyframes animate {
+            0%,100%{
+                clip-path: polygon(0% 45%, 15% 44%, 32% 50%,
+                54% 60%, 70% 61%, 84% 59%, 100% 52%,
+                100% 100%, 0% 100%);
+            }
+            50%{
+                clip-path: polygon(0% 60%, 16% 65%, 34% 66%,
+                51% 62%, 67% 50%, 84% 45%, 100% 46%,
+                100% 100%, 0% 100%);
+            }
+        }
+        h4 {
+            font-size: 24px;
+            white-space: nowrap;
+        }
     </style>
 </head>
   <body>
-    <img src="6_Purple.jpg" style="width: 100%">
-    <p style="font-size: 300%"><b>Welcome to the Marine Life Gallery!</b></p>
+    <img src="7_MarineLife.jpg" style="width: 100%">
+    <div style="text-align:center;">
+        <p><br><br><br></p>
+        <p style="font-size: 300%"><b>Welcome to the</b></p>
+        <p><br><br><br></p>
+        <div style="display:inline-block;">
+            <div class="content">
+                <h4>Marine Life</h4>
+                <h4>Marine Life</h4>
+            </div>
+        </div>
+        <p><br><br><br><br></p>
+        <p style="font-size: 300%"><b>Gallery! </b></p>
+    </div>
+    <p><br><br><br></p>
     <p style="font-size: 200%">Press the button below to go to a random page.</p>
     <p><br><br><br><br></p>
     <button onclick="chooseRandomPage()">
