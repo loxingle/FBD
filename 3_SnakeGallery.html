@@ -8,6 +8,9 @@
             background-color: Gray;
             color: Black;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         button {
             transform: rotate(-25deg) skew(25deg);
@@ -95,11 +98,92 @@
         button:nth-child(1):hover span {
             background: #52E19F;
         }
+        .snake-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @font-face {
+            src: url("https://www.axis-praxis.org/fonts/webfonts/AvenirNext_Variable.woff2") format("woff2");
+            font-family: "Avenir";
+            font-style: normal;
+            font-weight: normal;
+        }
+        .text {
+            font-variation-settings: "wght" 400, "wdth" 100;
+            font-size: 5em;
+            text-align: center;
+            position: absolute;
+            animation: text-flow 6s infinite;
+            color: transparent;
+            font-family: "Avenir";
+        }
+        .text:nth-child(1) {
+            animation-delay: 0.40s;
+            opacity: 0.9;
+            -webkit-text-stroke: 3px #b3ffb9;
+            z-index: 0;
+        }
+        .text:nth-child(2) {
+            animation-delay: 0.5s;
+            opacity: 0.8;
+            -webkit-text-stroke: 3px #9bfaa2;
+            z-index: -1;
+        }
+        .text:nth-child(3) {
+            animation-delay: 0.75s;
+            opacity: 0.7;
+            -webkit-text-stroke: 3px #7df885;
+            z-index: -2;
+        }
+        .text:nth-child(4) {
+            animation-delay: 1s;
+            opacity: 0.6;
+            -webkit-text-stroke: 3px #61fe6c;
+            z-index: -3;
+        }
+        .text:nth-child(5) {
+            animation-delay: 1.25s;
+            opacity: 0.5;
+            -webkit-text-stroke: 3px #4ffa5b;
+            z-index: -4;
+        }
+        .text:nth-child(6) {
+            animation-delay: 1.5s;
+            opacity: 0.4;
+            -webkit-text-stroke: 3px #42f74e;
+            z-index: -5;
+        }
+        @keyframes text-flow {
+            25% {
+              font-variation-settings: "wght" 900, "wdth" 100;
+              filter: hue-rotate(0deg);
+            }
+            50% {
+              transform: translateY(-100px);
+              font-variation-settings: "wght" 400, "wdth" 100;
+            }
+            75% {
+              transform: translateY(0%);
+              font-variation-settings: "wght" 900, "wdth" 100;
+              filter: hue-rotate(90deg);
+            }
+        }
     </style>
 </head>
   <body>
     <img src="3_Snake.jpg" style="width: 100%">
-    <p style="font-size: 300%"><b>Welcome to the Snake Gallery!</b></p>
+    <p style="font-size: 300%"><b>Welcome to the</b></p>
+    <p><br><br><br></p>
+    <div class="snake-center">
+        <div class="text">Snake</div>
+        <div class="text">Snake</div>
+        <div class="text">Snake</div>
+        <div class="text">Snake</div>
+        <div class="text">Snake</div>
+        <div class="text">Snake</div>
+    </div>
+    <p style="font-size: 300%"><b>Gallery!</b></p>
     <p style="font-size: 200%">Press the button below to go to a random page.</p>
     <p><br><br><br><br></p>
     <button onclick="chooseRandomPage()">
@@ -107,7 +191,7 @@
         <span></span>
         <span></span>
         <span></span>
-        <span>Press</span>
+        <span>Press</span></button>
             <script>
                 function chooseRandomPage() {
                 var pages = [
@@ -142,6 +226,5 @@
                 window.location.href = pages[randomIndex];
                 }
             </script>
-    </button>
   </body>
 </html>
